@@ -1,0 +1,31 @@
+pipeline {
+  agent any
+  
+  stages {
+    stage('Checkout') {
+      steps {
+        git 'https://github.com/your-repo/front-end.git'
+      }
+    }
+    
+    stage('Build') {
+      steps {
+        sh 'npm install'
+        sh 'npm run build'
+      }
+    }
+    
+    stage('Test') {
+      steps {
+        sh 'npm run test'
+      }
+    }
+    
+    stage('Deploy') {
+      steps {
+        // Add deployment steps here
+        // Examples: deploying to a web server, cloud storage, or CDN
+      }
+    }
+  }
+}

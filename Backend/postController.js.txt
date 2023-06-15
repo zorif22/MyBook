@@ -1,0 +1,19 @@
+const Post = require('../models/Post');
+
+exports.getAllPosts = (req, res) => {
+  // Retrieve all posts from the database
+  const posts = Post.getAll();
+  res.json(posts);
+};
+
+exports.createPost = (req, res) => {
+  // Create a new post based on the request body
+  const newPost = Post.create(req.body);
+  res.json(newPost);
+};
+
+exports.getPostById = (req, res) => {
+  // Retrieve a post by its ID from the database
+  const post = Post.getById(req.params.id);
+  res.json(post);
+};

@@ -1,0 +1,32 @@
+pipeline {
+  agent any
+  
+  stages {
+    stage('Checkout') {
+      steps {
+        git 'https://github.com/your-repo/back-end.git'
+      }
+    }
+    
+    stage('Build') {
+      steps {
+        // Add build steps here
+        // Examples: compiling code, installing dependencies
+      }
+    }
+    
+    stage('Test') {
+      steps {
+        // Add test steps here
+        // Examples: running unit tests, integration tests
+      }
+    }
+    
+    stage('Deploy') {
+      steps {
+        // Add deployment steps here
+        // Examples: deploying to a server, cloud platform, or container
+      }
+    }
+  }
+}

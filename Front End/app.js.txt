@@ -1,0 +1,34 @@
+// Simulated data
+const posts = [
+  { id: 1, title: 'Hello, MyBook!', content: 'This is my first post on Basic MyBook.' },
+  { id: 2, title: 'Exciting News', content: 'Just launched a new feature! Check it out.' },
+];
+
+const comments = [
+  { id: 1, postId: 1, content: 'Great post!' },
+  { id: 2, postId: 1, content: 'Looking forward to more updates.' },
+  { id: 3, postId: 2, content: 'Congratulations on the new feature.' },
+];
+
+// Render posts
+const postsContainer = document.getElementById('posts');
+posts.forEach((post) => {
+  const postElement = document.createElement('div');
+  postElement.classList.add('post');
+  postElement.innerHTML = `
+    <h2>${post.title}</h2>
+    <p>${post.content}</p>
+  `;
+  postsContainer.appendChild(postElement);
+});
+
+// Render comments
+const commentsContainer = document.getElementById('comments');
+comments.forEach((comment) => {
+  const commentElement = document.createElement('div');
+  commentElement.classList.add('comment');
+  commentElement.innerHTML = `
+    <p>${comment.content}</p>
+  `;
+  commentsContainer.appendChild(commentElement);
+});

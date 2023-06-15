@@ -1,0 +1,19 @@
+const User = require('../models/User');
+
+exports.getAllUsers = (req, res) => {
+  // Retrieve all users from the database
+  const users = User.getAll();
+  res.json(users);
+};
+
+exports.createUser = (req, res) => {
+  // Create a new user based on the request body
+  const newUser = User.create(req.body);
+  res.json(newUser);
+};
+
+exports.getUserById = (req, res) => {
+  // Retrieve a user by their ID from the database
+  const user = User.getById(req.params.id);
+  res.json(user);
+};
